@@ -2,17 +2,19 @@
 <html>
 <body>
     <p id="ip-address"></p>
+    <button onclick="checkIp()">Check IP</button>
     <script>
-        fetch("https://ipinfo.io/json")
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (ipJson) {
-                document.querySelector("#ip-address").innerHTML = ipJson.ip + " - " + ipJson.city;
-            }).catch(function (error) {
-                console.log("Error: " + error);
-            });
-
+        async checkIp(){
+            fetch("https://ipinfo.io/json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (ipJson) {
+                    document.querySelector("#ip-address").innerHTML = ipJson.ip + " - " + ipJson.city;
+                }).catch(function (error) {
+                    console.log("Error: " + error);
+                });
+        }
     </script>
 </body>
 </html>
