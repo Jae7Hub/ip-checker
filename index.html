@@ -4,7 +4,7 @@
     <p id="ip-address"></p>
     <button onclick="checkIp()">Check IP</button>
     <script>
-        async checkIp(){
+        function checkIp(){
             fetch("https://ipinfo.io/json")
                 .then(function (response) {
                     return response.json();
